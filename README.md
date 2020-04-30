@@ -18,7 +18,7 @@ nix-build -A update-nix-file
 `setBreakage` function allows to manipulate `meta.broken`
 attributes of `.nix` files programmatically. Currently it doesn't `eval`
 `nixpkgs` directly but uses `AST` to traverse the package set following
-`callPackage` calls.
+`callPackage` calls. Fallback to eval using `getMetaPosition` is planned as well.
 
 This will be further generalized to arbitrary `.nix` file
 manipulation operations like adding, removing or changing attributes.

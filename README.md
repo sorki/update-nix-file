@@ -26,10 +26,11 @@ manipulation operations like adding, removing or changing attributes.
 ### Command line usage
 
 ```bash
-update-nix-file break zzuf
+update-nix-file break zzuf --dry
 update-nix-file unbreak zzuf
 ```
 
+See `update-nix-file --help` for more.
 
 ### `cabal repl` usage
 
@@ -50,3 +51,22 @@ import Update.Nix.File
 -- and dry-run enabled which makes it not to touch
 -- files and use stdout instead
 ```
+
+
+### Other bits
+
+Until they have better home.
+
+```bash
+update-nix-file find-file nixpkgs
+# evals <nixpkgs> location according to NIX_PATH
+update-nix-file find-file nixpkgs/lib
+# e.g. /etc/nixpkgs/lib/default.nix
+
+update-nix-file find zzuf
+# /etc/nixpkgs/pkgs/tools/security/zzuf/default.nix:19
+
+update-nix-file find haskellPackages.zre
+/etc/nixpkgs/pkgs/development/haskell-modules/hackage-packages.nix:271703
+```
+

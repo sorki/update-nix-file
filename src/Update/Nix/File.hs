@@ -14,6 +14,7 @@ module Update.Nix.File (
   , findBroken
   , findMeta
   , module Update.Nix.File.Eval
+  , module Update.Nix.File.Util
   , nixpkgsFile
   ) where
 

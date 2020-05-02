@@ -19,6 +19,7 @@ data Opt = Opt {
   } deriving (Eq, Show)
 
 
+parseCmd :: Parser Cmd
 parseCmd = subparser
   (
      (command "break"     (info (pure Break)           (progDesc "Break package")))
